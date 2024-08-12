@@ -114,10 +114,12 @@ export default function ChatModal({ open, onClose }) {
                 }
                 color="white"
                 borderRadius={16}
-                p={2}
+                p={3}
                 maxWidth="75%"
               >
-                {message.content}
+                  {message.content.split('\n').map((line, lineIndex) => (
+                    <div key={lineIndex}>{line}</div>
+                  ))}
               </Box>
             </Box>
           ))}
